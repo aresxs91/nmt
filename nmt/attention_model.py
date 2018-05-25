@@ -120,6 +120,7 @@ class AttentionModel(model.Model):
         attention_layer_size=num_units,
         alignment_history=alignment_history,
         output_attention=hparams.output_attention,
+        do_acvi=hparams.do_acvi,
         name="attention")
 
     # TODO(thangluong): do we need num_layers, num_gpus?

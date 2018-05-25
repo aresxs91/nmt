@@ -240,6 +240,8 @@ def add_arguments(parser):
                       Average the last N checkpoints for external evaluation.
                       N can be controlled by setting --num_keep_ckpts.\
                       """))
+  parser.add_argument("--do_acvi", type=bool, default=True,
+                      help="whether to apply the ACVi mechanism on the model's context vectors")
 
   # Inference
   parser.add_argument("--ckpt", type=str, default="",
@@ -367,6 +369,7 @@ def create_hparams(flags):
       avg_ckpts=flags.avg_ckpts,
       num_intra_threads=flags.num_intra_threads,
       num_inter_threads=flags.num_inter_threads,
+      do_acvi=flags.do_acvi,
   )
 
 
